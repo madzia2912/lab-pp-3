@@ -112,20 +112,23 @@ Niech użytkownik zdecyduje kiedy zakończyć działanie programu. Program poza 
 wykonać, powinien także zapytać czy zakończyć swoje działanie. Aby zakończyć działanie programu wykorzystaj
 funkcję return.*/
 
-#include <iostream>
+/*#include <iostream>
 using namespace std;
+
 int main() {
-	double a;
-	double b;
-	char znak;   // zmienna przechowująca znak działania
-	char decyzja; // zmienna przechowująca decyzję użytkownika o zakończeniu programu
-	while (1) {  // Pętla nieskończona
-		cout << "Wprowadz dwie liczby zmiennoprzecinkowe" << endl;
-		cin >> a >> b:
-		cout << "Wprowadz znak dzialania (+, -, *, /): " << endl;
+	while (true) { // nieskończona pętla 
+		double a, b;
+		char znak;
+		char zakoncz; // zmienna do odpowiedzi czy zakończyć 
+
+		cout << "Wprowadz dwie liczby zmiennoprzecinkowe: ";
+		cin >> a >> b;
+
+		cout << "Wprowadz znak dzialania (+, -, *, /): ";
 		cin >> znak;
+
 		if (znak == '+') {
-			cout(<< "Wynik dodawania: " << a + b << endl;)
+			cout << "Wynik dodawania: " << a + b << endl;
 		}
 		else if (znak == '-') {
 			cout << "Wynik odejmowania: " << a - b << endl;
@@ -134,15 +137,70 @@ int main() {
 			cout << "Wynik mnozenia: " << a * b << endl;
 		}
 		else if (znak == '/') {
-			if (b != 0) {                                     
+			if (b != 0) {
 				cout << "Wynik dzielenia: " << a / b << endl;
 			}
 			else {
 				cout << "Nie mozna dzielic przez 0!" << endl;
 			}
 		}
-	} 
- 
+		else {
+			cout << "Nieznany znak dzialania!" << endl;
+		}
+
+		cout << "Czy chcesz zakonczyc program? (t = tak, n = nie): ";
+		cin >> zakoncz;
+
+		if (zakoncz == 't' || zakoncz == 'T') {
+			cout << "Koniec programu. Do widzenia!" << endl;
+			return 0;  // zakończenie programu gdy użytkownik wybierze tak
+		}
+
+	}
+
+} */
+
+/*Zad 7. Napisz program, który zawiera pętlę nieskończoną, która wyświetla kolejne liczby całkowite z tym, że
+każdą podzielną przez 2 pomija odpowiednią instrukcją. Ponadto, napisz warunek przerwania pętli, jeśli iterator
+będzie równy 200.*/
+
+/*#include <iostream     //okej ale nie o to chodziło w zadaniu
+using namespace std;
+int main() {
+	for (int i = 1; i <= 200; i++, i++) { //lub i+=2
+		cout << i << endl;
+	}
+} */
+
+// poprawne rozwiązanie zadania 7
+
+/*#include <iostream>
+using namespace std;
+int main() {
+	int i = 1;
+	while (1) {
+
+		if (i == 200) {    // warunek przerwania pętli
+			break;        // break przerywa działanie pętli
+		}
+		if (i%2 == 0) { //sprawdzenie czy liczba jest podzielna przez 2
+			i++;      // jeśli tak to zwiększamy iterator i przechodzimy do następnej iteracji
+			continue; // instrukcja continue powoduje pominięcie reszty kodu w pętli i przejście do nastepnej iteracji jakby
+		}             // "pomiń resztę kodu poniżej i wróć na początek pętli"
+
+		cout << i << endl; // wyświetlanie liczby niepodzielnej przez 2
+		i++;
+	}
+} */
+
+/*Zad 8. Napisz program, który sprawdzi czy wprowadzona przez użytkownika naturalna dodatnia liczba n,
+posiada co najmniej jeden dzielnik z przedziału [2,
+√
+n]. Oznacza to, że jeśli program znajdzie pierwszy dzielnik
+z tego przedziału to wyświetla odpowiedni komunikat i przerywa działanie pętli. Aby wykonać pierwiastkowanie
+wykorzystaj gotową funkcje sqrt(), z której można skorzystać po dołączeniu biblioteki math.h.*/
+
+
 
 
 
